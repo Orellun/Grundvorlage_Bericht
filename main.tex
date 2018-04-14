@@ -1,0 +1,119 @@
+% Header mit Deklarationen
+\input{Sonderseiten/header.tex}
+
+% Zinz Biblio-Management
+% Literaturverzeichnis
+% \bibliography{literatur/bib}
+
+\begin{document}
+
+% Römische Nummerierung für Sonderseiten, wie Verzeichnisse und Anhang
+\pagenumbering{Roman}
+
+% Titelblatt
+\input{Sonderseiten/Titelseite_2.tex}
+
+\cleardoublepage\thispagestyle{empty}
+
+%\input{Sonderseiten/Eigenstaendigkeitserklauerung}
+
+
+\cleardoublepage
+
+% \input{Sonderseiten/Sperrvermerk}
+
+\clearpage
+
+\input{Sonderseiten/Zusammenfassung}
+
+\clearpage
+
+% Verzeichnisse
+% Kopfzeile links Kapitel, rechts leer
+%\ihead{\leftmark}
+%\ohead{}
+%\input{Sonderseiten/verzeichnisse}
+
+%
+% Inhaltsverzeichnis
+%
+\tableofcontents \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}%\pdfbookmark[0]{Inhaltsverzeichnis}{sumario_label_pdf}
+
+
+\input{Sonderseiten/nomenklatur}
+
+
+%
+% Abkürzungsverzeichnis
+%
+\input{Sonderseiten/abkuerzungen}
+\printglossary[title={Abkürzungsverzeichnis},toctitle={Abkürzungsverzeichnis},type=\acronymtype,style=long]
+
+
+% Merke mir die römische Seitenzahl in 'roemisch' und setzte Nummeriernung 
+
+% auf arabisch für die eigentlichen Kapitel
+\cleardoublepage
+
+\newcounter{roemisch}
+\setcounter{roemisch}{\value{page}}
+\pagenumbering{arabic}
+
+\input{kapitel/00_Ausgangslage.tex}
+
+\cleardoublepage
+
+\input{kapitel/01_Statistische_Betrachtung.tex}
+
+\cleardoublepage
+
+\input{kapitel/02_Lasten_nach_CS23.tex}
+
+\cleardoublepage
+
+\input{kapitel/03_Optimierungsgrenzen.tex}
+
+\cleardoublepage
+
+\input{kapitel/04_Strukturberechnung.tex}
+
+\cleardoublepage
+
+\input{kapitel/05_Konstruktion.tex}
+
+\cleardoublepage
+
+\input{kapitel/06_Zeichnungssatz.tex}
+
+\cleardoublepage
+
+\input{kapitel/07_Bewertung.tex}
+
+\cleardoublepage
+
+\newpage
+%\pagenumbering{Roman}
+%\setcounter{page}{\value{roemisch}}
+
+%Biblio-Management
+\bibliography{literatur/bib}
+
+%
+% Abbildungsverzeichnis
+%
+\listoffigures
+
+%
+% Tabellenverzeichnis
+%
+\listoftables
+
+\cleardoublepage
+
+
+% Appendix, falls vorhanden
+\appendix
+
+%\input{Sonderseiten/anhang}
+
+\end{document}
